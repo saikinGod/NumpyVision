@@ -1,0 +1,9 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Python Cache (Ye bhi Git mein nahi jana chahiye)
+__pycache__/
+*.pyc
+*.pyo
