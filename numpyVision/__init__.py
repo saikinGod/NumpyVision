@@ -1,1 +1,1 @@
-from .core import Corenpvision as NumpyVision
+from .core import CoreNpVision as NumpyVision

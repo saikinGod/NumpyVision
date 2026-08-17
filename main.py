@@ -1,3 +1,4 @@
+from numpyVision import NumpyVision
 def main():
     pass
 
