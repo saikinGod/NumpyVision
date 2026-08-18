@@ -81,3 +81,27 @@ class CoreNpVision:
     def color_balance(self, r_add=0, g_add=0, b_add=0, inplace=True):
         res = ops_color.color_balance(self.img_arr, r_add, g_add, b_add)
         return self._handle_inplace(res, inplace)
+        
+    def crop(self, x1, y1, x2, y2, inplace=True):
+        res = ops_geometry.crop(self.img_arr, x1, y1, x2, y2)
+        return self._handle_inplace(res, inplace)
+
+    def center_crop(self, crop_width, crop_height, inplace=True):
+        res = ops_geometry.crop(self.img_arr, crop_width, crop_height)
+        return self._handle_inplace(res, inplace)
+
+    def flip(self, direction="horizontal", inplace=True):
+        res = ops_geometry.flip(self.img_arr, direction)
+        return self._handle_inplace(res, inplace)
+
+    def rotate_90(self, inplace=True):
+        res = ops_geometry.rotate_90(self.img_arr)
+        return self._handle_inplace(res, inplace)
+
+    def add_border(self, thickness, color=(0, 0, 0), inplace=True):
+        res = ops_geometry.add_border(self.img_arr, thickness, color)
+        return self._handle_inplace(res, inplace)
+
+    def mirror_effect(self, inplace=True):
+        res = ops_geometry.mirror_effect(self.img_arr)
+        return self._handle_inplace(res, inplace)
