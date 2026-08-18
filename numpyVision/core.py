@@ -81,7 +81,7 @@ class CoreNpVision:
     def color_balance(self, r_add=0, g_add=0, b_add=0, inplace=True):
         res = ops_color.color_balance(self.img_arr, r_add, g_add, b_add)
         return self._handle_inplace(res, inplace)
-        
+
     def crop(self, x1, y1, x2, y2, inplace=True):
         res = ops_geometry.crop(self.img_arr, x1, y1, x2, y2)
         return self._handle_inplace(res, inplace)
@@ -104,4 +104,20 @@ class CoreNpVision:
 
     def mirror_effect(self, inplace=True):
         res = ops_geometry.mirror_effect(self.img_arr)
+        return self._handle_inplace(res, inplace)
+
+    def blur(self,intensity, inplace=True):
+        res = ops_filters.blur(self.img_arr,intensity)
+        return self._handle_inplace(res, inplace)
+
+    def edge_detect(self, inplace=True):
+        res = ops_filters.edge_detect(self.img_arr)
+        return self._handle_inplace(res, inplace)
+
+    def sharpen(self, inplace=True):
+        res = ops_filters.sharpen(self.img_arr)
+        return self._handle_inplace(res, inplace)
+
+    def emboss(self, inplace=True):
+        res = ops_filters.emboss(self.img_arr)
         return self._handle_inplace(res, inplace)
